@@ -1,5 +1,7 @@
 # qgis2sps
 
+![alt text](http://url/to/img.png)
+
 QGIS2SPS er et QGIS plugin der automatisk generere Spatial Suite konfiguration ud fra din temaopsætning.
 
 Python plugin’et installeres gennem følgende steps :
