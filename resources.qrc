@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/sps2qgis" >
+        <file>icon2.png</file>
+    </qresource>
+</RCC>

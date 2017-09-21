@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:#F0F0F0">
+<h2><strong>DOKUMENTATION OG BRUGERVEJLEDNING</strong></h2>
+<ul>
+<li>
+<h4><a href="#guide">Brugervejledning</a></h4>
+</li>
+<li>
+<h4><a href="#functions">Funktionalitet</a></h4>
+</li>
+<li>
+<h4><a href="#notpossible">Hvad kan man ikke ?</a></h4>
+</li>
+<li>
+<h4><a href="#license">Licens</a></h4>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="guide">BRUGERVEJLEDNING</h2>
+<p><strong>1. Ops&aelig;tning af temaer.</strong></p>
+<p>F&oslash;rst ops&aelig;ttes de &oslash;nskede temaer i QGIS med styling efter behov. (L&aelig;s de f&oslash;lgende afsnit for en beskrivelse af hvad der er muligt og hvad der ikke er muligt at konvertere med pluginet).</p>
+<p><strong>2. Konvertering af ops&aelig;tning til modul.</strong></p>
+<p>Brugergr&aelig;nsefladen til pluginet er rimeltig simpel, og der er ikke ret meget der skal tages stilling til. Der vises en liste over kompatible temaer, som l&aelig;ses direkte fra lag-tr&aelig;et i QGIS (l&aelig;s nedenfor om kompatible lag). QGIS har mulighed for at man kan have flere lag med samme navn i sit projekt. Dette g&aring;r ikke n&aring;r vi konvertere til Spatial Suite, og &aring;bner op for en r&aelig;kke mulige fejl. Derfor anbefales det at have forskellige navne p&aring; alle teamer der &oslash;nskes medtaget i modulet.&nbsp; De &oslash;nskede lag der skal medtages i modulet udpeges derefter. Herefter navngives modulet, og der udpeges en sti hvor modulet skal placeres. Hvis der v&aelig;lges en eksisterende mappe, s&aring; f&aring;r du en advisering om at modulet allerede findes. Plugin'et overskriver ikke et eksisterende modul.</p>
+<p>Som udgangspunkt er presentations, targets og includes valgt - hvis man ikke &oslash;nsker disse dannet, s&aring; fjerens fluebenet i de relevante bokse.&nbsp;Herefter trykkes 'Dan modul' og konfigurationen eksporteres fra QGIS til et Spatial Suite modul.&nbsp;</p>
+<p>Er der fejl i enkelte temaer, vil dette blive vist b&aring;de i status-boksen og i QGIS brugerfladen. Hvis modulet afsluttes uden fejl, meldes dette tilbage.&nbsp;</p>
+<p>Dit nye Spatial Suite modul er nu klar til at blive lagt til konfigurationen.</p>
+<p>&nbsp;</p>
+<h2 id="functions"><strong>FUNKTIONALITET</strong></h2>
+<p>Afh&aelig;ngigt af brugeres valg oprettes et Spatial Suite modul, der er klar til at blive lagt i konfigurationen. Uafh&aelig;ngigt af valg dannes altid endpoints, datasources, temaer og readme fil til modulet. Ved tilvalg er det ogs&aring; muligt at danne includes, targetset og presentations til modulet.</p>
+<p>Modulet underst&oslash;tter kun konvertering af lag fra en PostGIS database. Alle lag der har andre sources end PostGIS vil komme til at optr&aelig;de som et 'inkompatibelt' lag i dialogen. Informationerne omkring databasens forbindelses-parametre bliver direkte overf&oslash;rt til endpointet.&nbsp;</p>
+<p>Modulet benytter en fast navnestruktur for alle konverteringer:</p>
+<p>ep_modulnavn</p>
+<p>ds_modulnavn_datasourcenavn</p>
+<p>theme_modulnavn_temanavn</p>
+<p>Pluginet l&aelig;ser konfigurationen af hvert enkelt lag fra QGIS som en qgis style fil (qml). Heri findes al informationer om feltnavne, symboliseringer, farver, transparens osv.&nbsp;</p>
+<p>Modulet er i stand til at overs&aelig;tte f&oslash;lgende symboliseringer:</p>
+<ul>
+<li>Single symbol</li>
+<li>Graduated symbols</li>
+<li>Categorized symbols</li>
+</ul>
+<p>Der er visse krav fra Spatial Suite til navngivningen af de enkelte temaer, som rettes n&aring;r temaerne eksporteres. Mellemrum i lagnavnet erstattes automatisk med underscores, &aelig; &oslash; og &aring; erstattes med hhv 'ae', 'oe' og 'aa'. Der er en r&aelig;kke specialtegn som xml strukturen har problemer med at behandle s&aring;som '&gt;', '&lt;', '/' og '\'. Lagnavne med disse vil resultere i en fejlmeddelese hvis de fors&oslash;ges konverteret.</p>
+<p>Det oprettede modul placeres i den folder der af brugeren er angivet i dialogen. Dette kan v&aelig;re direkte i modules/custom mappen i et Spatial Suite site.</p>
+<p>Efter konverteringen er det relevant at konsultere den dannede read.me fil i modulet, Der vil v&aelig;re ting der med fordel kan rettes i det genererede modul, s&aring;som udskriftning af connection/user/pwd i endpoints til at bruge de Spatial Suite definerede parametre.</p>
+<p>Herefter tilf&oslash;jes de relevante ressourcer fra read.me filen til cbinfo, profiler og targetsets - og derefter er modulet klar til at blive vist i Spatial Suite.</p>
+<p>Vi har observeret tilf&aelig;lde hvor QGIS danner nogle connection strenge hvor angivelse af primary key kolonne for et tema er forkert. Dette er en fejl i QGIS, som afleveres med til modulet. Dette vil medf&oslash;re at temaet fejler n&aring;r det indl&aelig;ses i Spatial Suite med en 'column not found' fejl. Dette kr&aelig;ver en manuel rettelse i datasource filen, s&aring; angivelsen af primary key kolonne bliver rigtig.</p>
+<p>Plugin'et er testet p&aring; f&oslash;lgene QGIS LTR versioner : 2.14 og 2.18</p>
+<p>Pluginet underst&oslash;tter aktuelt kun overs&aelig;ttelse fra data der kommer fra PostGIS databaser i version 9.x.&nbsp;</p>
+<h2 id="notpossible"><strong>HVAD KAN MAN IKKE ?</strong></h2>
+<p>QGIS har rigtig mange muligheder for at lave avanceret kartografi, som er langt mere avanceret end hvad Mapserver underst&oslash;tter. Derfor er det langt fra al konfiguration det er muligt at overs&aelig;tte til Spatial suite moduler.</p>
+<p>Et eksempel p&aring; dette er 'regelbaseret' styling, hvor man i QGIS kan ops&aelig;tte komplekse udtryk til visning af data. Dette er kun muligt at overs&aelig;tte en lille br&oslash;kdel af til Mapserver konfiguration - derfor underst&oslash;tter pluginet ikke at overs&aelig;tte disse.&nbsp;</p>
+<p>P&aring; samme m&aring;de er der ogs&aring; en problematik omkring symboler i forhold til hvad QGIS gemmer i deres qml filer som ligger til grund for konverteringen. N&aring;r man v&aelig;lger et symbol i QGIS, s&aring; gemmes kun den relative sti til symbolet. Dette g&oslash;r at det ikke umiddelbart er muligt for dette plugin at h&aring;ndtere symboler fra QGIS. Enkelte 'standard' symboler fra Spatial Suite er mulige at s&aelig;tte direkte op (circle, square, star mfl.), men derudover er man n&oslash;dt til at efterbearbejde modulet og justere symbolerne.</p>
+<p>Elementer der ikke underst&oslash;ttes :</p>
+<ul>
+<li>Labels</li>
+<li>Avancerede stylinger</li>
+<li>Custom symboler</li>
+<li>Skraveringer</li>
+<li>Andre databaser end Postgis</li>
+<li>Shapefiler m.m.</li>
+</ul>
+<h2>&nbsp;</h2>
+<h2 id="license"><strong>LICENS</strong></h2>
+<p>&nbsp;QGIS plugin'et er open source, og er frigivet under&nbsp;GNU General Public license v. 2.0 som kr&aelig;vet af QGIS.</p>
+<p>&nbsp;</p>
+</body>
+</html>
