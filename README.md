@@ -1,4 +1,4 @@
-# QGIS2SPS <p align="right"><img src="https://github.com/spatialsuite/qgis2sps/blob/master/images/sweco_l.png"/></p>
+<img src="https://github.com/spatialsuite/qgis2sps/blob/master/images/sweco_l.png"/> - # QGIS2SPS 
 
 
   
