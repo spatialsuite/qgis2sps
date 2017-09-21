@@ -1,7 +1,7 @@
 # QGIS2SPS
 
 <p align="right">
-  <img src="https://github.com/spatialsuite/qgis2sps/blob/master/images/sweco.png"/>
+  <img src="https://github.com/spatialsuite/qgis2sps/blob/master/images/sweco_l.png"/>
 </p>
 
 QGIS2SPS er et QGIS plugin der automatisk generere Spatial Suite konfiguration ud fra din temaopsætning.
