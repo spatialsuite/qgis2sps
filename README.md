@@ -11,13 +11,13 @@ Python plugin’et installeres gennem følgende steps :
 
 2.	Åben QGIS, og vælg  ’Manage and install plugins’
 
-<p align="left">
+<p align="center">
   <img src="https://github.com/spatialsuite/qgis2sps/blob/master/images/img1.png"/>
 </p>
 
 3.	Søg efter ’qgis2sps i søgefeltet
 
-<p align="left">
+<p align="center">
   <img src="https://github.com/spatialsuite/qgis2sps/blob/master/images/img2.png"/>
 </p>
 
@@ -25,7 +25,7 @@ Python plugin’et installeres gennem følgende steps :
 
 5.	Åben toolet – hvis toolet åbner op, er alle pakker på plads, og du er kalr til at bruge plugin’et
 
-<p align="left">
+<p align="center">
   <img src="https://github.com/spatialsuite/qgis2sps/blob/master/images/img3.png"/>
 </p>
 
