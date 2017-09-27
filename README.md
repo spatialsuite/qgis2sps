@@ -9,7 +9,7 @@ QGIS2SPS er et QGIS plugin der automatisk genererer Spatial Suite konfiguration 
 Plugin'et hentes gennem GitHub på https://github.com/spatialsuite/qgis2sps. Download pluginet, udpak og omdøb mappen til qgis2sps.
 
 Python plugin’et installeres gennem følgende steps :
-1.	Placer folderen med plugin’et i din QGIS installation – stien vil typisk hedde c:\users\myuser\\.qgis2\python\plugins (Og vil i mange tilfælde være en skjult folder). Hvis mappen python ikke findes, kan du enten oprette dem manuelt, eller lade python gøre det ved at installere et plugin fra menuen – dette vil kun være relevant for helt nye Qgis installationer.
+1.	Placer folderen med plugin’et i din QGIS installation – stien vil typisk hedde c:\users\myuser\\.qgis2\python\plugins (Og vil i mange tilfælde være en skjult folder). Hvis mappen python ikke findes, kan du enten oprette dem manuelt, eller lade python gøre det ved at installere et plugin fra menuen – dette vil kun være relevant for helt nye QGIS installationer.
 
 2.	Åben QGIS, og vælg  ’Manage and install plugins’
 
@@ -31,7 +31,7 @@ Python plugin’et installeres gennem følgende steps :
   <img src="https://github.com/spatialsuite/qgis2sps/blob/master/images/img3.png"/>
 </p>
 
-For brugervejledning og muligheder med plugin’et, se fanebladet ’om Qgis2sps’
+For brugervejledning og muligheder med plugin’et, se fanebladet ’Om QGIS2SPS’
 
 <p align="right">
   <img src="https://github.com/spatialsuite/qgis2sps/blob/master/images/sweco_l.png" />
