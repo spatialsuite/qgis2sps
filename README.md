@@ -32,3 +32,7 @@ Python plugin’et installeres gennem følgende steps :
 </p>
 
 For brugervejledning og muligheder med plugin’et, se fanebladet ’om Qgis2sps’
+
+<p align="right">
+  <img src="https://github.com/spatialsuite/qgis2sps/blob/master/images/sweco_l.png" />
+</p>
