@@ -31,7 +31,7 @@ from qgis2sps_dialog import qgis2spsDialog
 
 from qgis.core import QgsMessageLog
 from qgis.utils import *
-import functions
+
 from yattag import Doc
 from yattag import indent
 import xmltodict
