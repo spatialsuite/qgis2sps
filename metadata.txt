@@ -16,8 +16,8 @@ email=mortenwinther.fuglsang@sweco.dk
 
 about=.
 
-tracker=www.mypage.com
-repository=www.mypage.com
+tracker=https://github.com/spatialsuite/qgis2sps/issues
+repository=https://github.com/spatialsuite/qgis2sps
 # End of mandatory metadata
 
 # Recommended items:
