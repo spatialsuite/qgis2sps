@@ -19,6 +19,8 @@ def epds(input):
     modulename = input[0]
     module_path = input[1]
     qgis_input = input[6]
+    selected_layers = input[2]
+
     endpoints = []
     doc, tag, text, line = Doc().ttl()
     doc.asis('<?xml version="1.0" encoding="UTF-8"?>')
@@ -35,9 +37,11 @@ def epds(input):
                         text(qgis_input[i]['password'])
             endpoints.append(connection)
         for b in range (0,len(qgis_input)):
-            with tag('datasource', endpoint = 'ep_' + modulename + '_'+ qgis_input[b]['dbname'], name= 'ds_'  + modulename + '_' + qgis_input[b]['layername']):
-                with tag('table', geometrycolumn=qgis_input[b]['geom'], name=qgis_input[b]['table'], pkcolumn= qgis_input[b]['key']):
-                    ''
+            layername = qgis_input[b]['displayname']
+            if layername in selected_layers:
+                with tag('datasource', endpoint = 'ep_' + modulename + '_'+ qgis_input[b]['dbname'], name= 'ds_'  + modulename + '_' + qgis_input[b]['layername']):
+                    with tag('table', geometrycolumn=qgis_input[b]['geom'], name=qgis_input[b]['table'], pkcolumn= qgis_input[b]['key']):
+                        ''
     result = indent(doc.getvalue())
     f = open(module_path + '/datasources/datasources.xml', 'w')
     f.write(result)
